@@ -1,4 +1,6 @@
-﻿namespace Tuples
+﻿using System;
+
+namespace Lambda
 {
     internal class Program
     {
@@ -6,16 +8,15 @@
         {
             PlanetCatalog planetCatalog = new PlanetCatalog();
 
-            var (NumberFromSunEarth, EquatorLengthEarth, messageEarth) = planetCatalog.GetPlanet("Земля");
-            var (NumberFromSunLim, EquatorLengthLim, messageLim) = planetCatalog.GetPlanet("Лимония");
-            var (NumberFromSunMars, EquatorLengthMars, messageMars) = planetCatalog.GetPlanet("Марс");
-            var (NumberFromSunMars_1, EquatorLengthMars_1, messageMars_1) = planetCatalog.GetPlanet("Марс");
+            var (NumberFromSunEarth, EquatorLengthEarth, messageEarth) = planetCatalog.GetPlanet("Земля", planetCatalog.PlanetValidator, planetCatalog.LimoniyaValidator);
+            var (NumberFromSunLim, EquatorLengthLim, messageLim) = planetCatalog.GetPlanet("Лимония", planetCatalog.PlanetValidator, planetCatalog.LimoniyaValidator);
+            var (NumberFromSunMars, EquatorLengthMars, messageMars) = planetCatalog.GetPlanet("Марс", planetCatalog.PlanetValidator, planetCatalog.LimoniyaValidator);
+            var (NumberFromSunMars_1, EquatorLengthMars_1, messageMars_1) = planetCatalog.GetPlanet("Марс", planetCatalog.PlanetValidator, planetCatalog.LimoniyaValidator);
 
             if (string.IsNullOrEmpty(messageEarth))
             {
                 Console.WriteLine(
-                    $"Планета Земля\nПорядковый номер от солнца: {NumberFromSunEarth}" +
-                    $"\nДлина экватора: {EquatorLengthEarth}\n----------");
+                    $"Планета Земля\nПорядковый номер от солнца: {NumberFromSunEarth}\nДлина экватора: {EquatorLengthEarth}\n----------");
             }
             else
             {
@@ -25,8 +26,7 @@
             if (string.IsNullOrEmpty(messageLim))
             {
                 Console.WriteLine(
-                    $"Планета Лимония\nПорядковый номер от солнца: {NumberFromSunLim}" +
-                    $"\nДлина экватора: {EquatorLengthLim}\n----------");
+                    $"Планета Лимония\nПорядковый номер от солнца: {NumberFromSunLim}\nДлина экватора: {EquatorLengthLim}\n----------");
             }
             else
             {
@@ -36,8 +36,7 @@
             if (string.IsNullOrEmpty(messageMars))
             {
                 Console.WriteLine(
-                    $"Планета Марс\nПорядковый номер от солнца: {NumberFromSunMars}" +
-                    $"\nДлина экватора: {EquatorLengthMars}\n----------");
+                    $"Планета Марс\nПорядковый номер от солнца: {NumberFromSunMars}\nДлина экватора: {EquatorLengthMars}\n----------");
             }
             else
             {
