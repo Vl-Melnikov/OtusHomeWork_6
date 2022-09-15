@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AnonTypes
+namespace Program1_AnonTypes
 {
     internal class Program
     {
@@ -9,7 +9,6 @@ namespace AnonTypes
             var planets = new AnonTypesPlanets();
 
             planets.GetPlanets();
-            Console.WriteLine("---");
 
             Console.ReadKey();
         }

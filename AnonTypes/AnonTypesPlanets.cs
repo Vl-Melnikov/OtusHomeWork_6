@@ -4,40 +4,37 @@ internal class AnonTypesPlanets
 {
     public void GetPlanets()
     {
-        var planet1 = new
+        var venus_1 = new
         {
             Name = "Venus",
             Number = 2,
             EquatorLength = 38025,
-            PreviousPlanet = "Mercury",
         };
-        Console.WriteLine(planet1 + "Эквивалентна Венере? " + planet1.Equals(planet1));
-
-        var planet2 = new
+        var earth = new
         {
             Name = "Earth",
             Number = 3,
             EquatorLength = 40075,
-            PreviousPlanet = planet1.Name,
+            PreviousPlanet = venus_1,
         };
-        Console.WriteLine(planet2 + "Эквивалентна Венере? " + planet2.Equals(planet1));
-
-        var planet3 = new
+        var mars = new
         {
             Name = "Mars",
             Number = 4,
             EquatorLength = 21344,
-            PreviousPlanet = planet2.Name,
+            PreviousPlanet = earth,
         };
-        Console.WriteLine(planet3 + "Эквивалентна Венере? " + planet3.Equals(planet1));
-
-        var planet4 = new
+        var venus_2 = new
         {
             Name = "Venus",
             Number = 2,
             EquatorLength = 38025,
-            PreviousPlanet = "Mercury",
+            PreviousPlanet = mars,
         };
-        Console.WriteLine(planet4 + "Эквивалентна Венере? " + planet4.Equals(planet1));
+
+        Console.WriteLine($"Информация о планете:\n{venus_1}\n{(venus_1.Equals(venus_1) ? "Эквивалентна Венере" : "Не эквивалентна Венере")}\n--------");
+        Console.WriteLine($"Информация о планете:\n{earth}\n{(earth.Equals(venus_1) ? "Эквивалентна Венере" : "Не эквивалентна Венере")}\n--------");
+        Console.WriteLine($"Информация о планете:\n{mars}\n{(mars.Equals(venus_1) ? "Эквивалентна Венере" : "Не эквивалентна Венере")}\n--------");
+        Console.WriteLine($"Информация о планете:\n{venus_2}\n{(venus_2.Equals(venus_1) ? "Эквивалентна Венере" : "Не эквивалентна Венере")}\n--------");
     }
 }

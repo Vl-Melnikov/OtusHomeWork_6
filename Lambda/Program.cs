@@ -1,17 +1,40 @@
 ﻿using System;
 
-namespace Lambda
+namespace Program3_Lambda
 {
     internal class Program
     {
+        private static int _countCall;
+
+        public static string PlanetValidator(string name)
+        {
+            string message;
+            _countCall++;
+
+            if (_countCall == 3)
+            {
+                message = "Вы спрашиваете слишком часто";
+                _countCall = 0;
+                return message;
+            }
+
+            if (name.Equals("Лимония"))
+            {
+                message = "Это запретная планета";
+                return message;
+            }
+
+            return null;
+        }
+
         private static void Main(string[] args)
         {
             PlanetCatalog planetCatalog = new PlanetCatalog();
 
-            var (NumberFromSunEarth, EquatorLengthEarth, messageEarth) = planetCatalog.GetPlanet("Земля", planetCatalog.PlanetValidator, planetCatalog.LimoniyaValidator);
-            var (NumberFromSunLim, EquatorLengthLim, messageLim) = planetCatalog.GetPlanet("Лимония", planetCatalog.PlanetValidator, planetCatalog.LimoniyaValidator);
-            var (NumberFromSunMars, EquatorLengthMars, messageMars) = planetCatalog.GetPlanet("Марс", planetCatalog.PlanetValidator, planetCatalog.LimoniyaValidator);
-            var (NumberFromSunMars_1, EquatorLengthMars_1, messageMars_1) = planetCatalog.GetPlanet("Марс", planetCatalog.PlanetValidator, planetCatalog.LimoniyaValidator);
+            var (NumberFromSunEarth, EquatorLengthEarth, messageEarth) = planetCatalog.GetPlanet("Земля", PlanetValidator);
+            var (NumberFromSunLim, EquatorLengthLim, messageLim) = planetCatalog.GetPlanet("Лимония", PlanetValidator);
+            var (NumberFromSunMars, EquatorLengthMars, messageMars) = planetCatalog.GetPlanet("Марс", PlanetValidator);
+            var (NumberFromSunMars_1, EquatorLengthMars_1, messageMars_1) = planetCatalog.GetPlanet("Марс", PlanetValidator);
 
             if (string.IsNullOrEmpty(messageEarth))
             {

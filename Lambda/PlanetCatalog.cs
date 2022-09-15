@@ -2,8 +2,6 @@
 
 public class PlanetCatalog
 {
-    private int _countCall;
-
     private List<Planet> planetCatalog = new List<Planet>();
 
     public PlanetCatalog()
@@ -13,7 +11,7 @@ public class PlanetCatalog
         planetCatalog.Add(new Planet("Марс", 4, 21344, planetCatalog[1]));
     }
 
-    public (int NumberFromSun, int EquatorLength, string message) GetPlanet(string PlanetName, FuncPlanet planetValidator, FuncLimoniya limoniyaValidator)
+    public (int NumberFromSun, int EquatorLength, string message) GetPlanet(string PlanetName, PlanetValidator planetValidator)
     {
         var result = (NumberFromSun: 0, EquatorLength: 0, message: "");
 
@@ -28,48 +26,13 @@ public class PlanetCatalog
             }
         }
 
-        if (result.NumberFromSun == 0)
+        if (result.NumberFromSun == 0 && result.message == "")
         {
             result.message = "Не удалось найти планету";
-        }
-
-        if (PlanetName.Equals("Лимония"))
-        {
-            result.message = limoniyaValidator("Лимония");
         }
 
         return result;
     }
 
-    public delegate string FuncPlanet(string Name);
-
-    public delegate string FuncLimoniya(string Name);
-
-    public string PlanetValidator(string name)
-    {
-        string message;
-        _countCall++;
-
-        if (_countCall == 3)
-        {
-            message = "Вы спрашиваете слишком часто";
-            _countCall = 0;
-            return message;
-        }
-
-        return null;
-    }
-
-    public string LimoniyaValidator(string Name)
-    {
-        string message;
-
-        if (Name.Equals("Лимония"))
-        {
-            message = "Это запретная планета";
-            return message;
-        }
-
-        return null;
-    }
+    public delegate string PlanetValidator(string Name);
 }

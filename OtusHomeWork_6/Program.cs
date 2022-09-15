@@ -1,4 +1,4 @@
-﻿namespace Tuples
+﻿namespace Program2_Tuples
 {
     internal class Program
     {

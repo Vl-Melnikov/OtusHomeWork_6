@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Tuples", "OtusHomeWork_6\Tuples.csproj", "{272D802B-39DA-4B4B-92F7-2AC08430EFDE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program2_Tuples", "OtusHomeWork_6\Program2_Tuples.csproj", "{272D802B-39DA-4B4B-92F7-2AC08430EFDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnonTypes", "AnonTypes\AnonTypes.csproj", "{354FF325-D0D3-4C84-A653-B9C8B8EEB604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program1_AnonTypes", "AnonTypes\Program1_AnonTypes.csproj", "{354FF325-D0D3-4C84-A653-B9C8B8EEB604}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lambda", "Lambda\Lambda.csproj", "{0222EE26-D27E-4C60-A4BF-D115BB89D95E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Program3_Lambda", "Lambda\Program3_Lambda.csproj", "{0222EE26-D27E-4C60-A4BF-D115BB89D95E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
